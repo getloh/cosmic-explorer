@@ -1,0 +1,147 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    // border: 1px solid maroon;
+    
+
+
+  }
+
+  $backgroundColor1 :#131516;
+  $textColor1: #d8d4cf;
+
+
+  .app{
+    background-color: $backgroundColor1;
+  }
+  section{
+    margin: 5vh 0;
+  }
+
+  .launchlist{
+    background-color: $backgroundColor1;
+    color: $textColor1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+  .launchlist-item-single{
+    margin: 1vw;
+  }
+
+  .launchlist-item{
+    padding: 1vw;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px black dotted;
+    
+    .launchlist-image{
+        overflow: hidden;
+        width: 15vw;
+        height: 15vw;
+    }
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+
+    }
+    .launchlist-item-side {
+        width: 27vw;
+        margin: 1vw;
+    }
+  }
+
+  // Launch Detail page
+
+  .launchdetail-page{
+    padding: 5vh 2vw;
+    background-color: $backgroundColor1;
+    color: rgb(230, 230, 230);
+    h1 {
+      text-align: center;
+    }
+    .launchdetail-head{
+      display: flex;
+      justify-content: space-around;
+      width: 80vw;
+      margin: 3vh auto;
+      img {
+        width: 30vw;
+        height: auto;
+        margin: 0 2vw;
+      }
+      .launchdetail-details{
+        margin: 0 2vw;
+        padding: 5vh 0vw;
+      }
+    }
+
+    .carousel{
+      width: 100vw;
+      height: 90vh;
+      margin: 5vh -3vw;
+
+      img{
+        object-fit: contain;
+        height: 90vh;
+      }
+    }
+
+    .launchdetail-stats{
+    
+      margin: 5vh 5vw;
+      // display: flex;
+      width: 75vw;
+      margin: 10vh auto 0;
+      font-size: 1.2rem;
+      background-color: rgba(0, 0, 0, 0.33);
+      background-image: url(../src/images/falcon9.jpg);
+      background-position: center;
+      background-size: cover;
+      background-blend-mode: darken;
+ 
+      // img{
+      //   position: absolute;
+      //   width: 75vw;
+      //   height: 70vh;
+      //   filter: brightness(0.5);
+      //   object-fit: cover;
+      //   z-index: 1;
+        
+      // }
+      .launchdetail-rocketstats{
+        width: 75vw;
+
+        // position: absolute;
+        z-index: 2;
+        color: white;
+
+      }
+      .rocket-box-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .rocket-box{
+          width: 20vw;
+          height: 50vh;
+          padding: 3vw;
+          margin: 10vh 2vw;
+          background-color: rgba(0, 0, 0, 0.7);
+          border-radius: 50px;
+
+         
+        }
+      }
+    }
+
+  }
