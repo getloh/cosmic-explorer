@@ -3,6 +3,7 @@ import { pastLaunchesTypes, pastLaunchSingleTypes } from "../interfaces";
 import { useState } from "react";
 
 import LaunchListItem from "./LaunchListItem";
+import loadinggif from '../../images/loadingripple.svg'
 
 const launch = gql`
   query {
@@ -43,7 +44,12 @@ function Launchlist () {
     });
 
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return (
+      <div id="loadscreen">
+        <img src={loadinggif} alt="loading" title="loading" />
+        <h3>Loading data...</h3>
+      </div>
+      );
     if (error) return <p>{error}</p>;
     // if (data){
     //     console.log(data)
