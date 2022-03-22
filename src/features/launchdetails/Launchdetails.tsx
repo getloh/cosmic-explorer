@@ -95,9 +95,9 @@ function Launchdetails () {
   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
 </svg> Prev</a>
 
-          <a href={`/launch/${Number(lId) + 1}`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+          {Number(lId) === 110 ? null : <a href={`/launch/${Number(lId) + 1}`}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg> Next</a>
+</svg> Next</a>}
         </div>
         <div id="launch404"><h2>Current launches are between 1 and 110</h2></div>
         </div>
@@ -146,7 +146,7 @@ function Launchdetails () {
         static // default false
       >
         {data.launch.links.flickr_images.map((link:string) => ( 
-            <div className="carousel-cell"><img src={link} alt=""/></div>
+            <div className="carousel-cell"><img src={link} alt="SpaceX launch"/></div>
         ))}
 
       </Flickity>
@@ -161,18 +161,19 @@ function Launchdetails () {
         <div className="launchdetail-page">
 
         <div className="prevnextbuttons">
-          <button onClick={() => Navigate(`/launch/${Number(lId) -1}`)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
+          {Number(lId) === 1 ? <button>No <br /> Earlier <br /> Launches</button> : <button onClick={() => Navigate(`/launch/${Number(lId) -1}`)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
-</svg>Prev</button>
-          <button onClick={() => Navigate(`/launch/${Number(lId) + 1}`)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+</svg>Prev</button>}
+
+          {Number(lId) === 110 ? <button>No <br /> Later <br /> Launches</button> : <button onClick={() => Navigate(`/launch/${Number(lId) + 1}`)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
-</svg> Next</button>
+</svg> Next</button>}
         </div>
         
 
           <h1>{data.launch.mission_name}</h1>
             <section className="launchdetail-head">
-              {data.launch.links.mission_patch ? <img src={data.launch.links.mission_patch} alt="" title={data.launch.mission_name}/> : <img src={noimg} alt="" />}
+              {data.launch.links.mission_patch ? <img src={data.launch.links.mission_patch} alt={`Mission patch for ${data.launch.mission_name}`} title={data.launch.mission_name}/> : <img src={noimg} alt="" />}
               <div className="launchdetail-details">
                 <h4>Launch Date:</h4>
                 <p>{moment(data.launch.launch_date_local).format("Do MMMM YYYY")}</p>
@@ -182,7 +183,7 @@ function Launchdetails () {
                   <h4>Launch Site:</h4>
                   <p>{data.launch.launch_site.site_name_long}</p>
                   <div className="gmaps">
-                    <iframe width="100%" height="100%" loading="lazy" allowFullScreen 
+                    <iframe title="googlemaps" width="100%" height="100%" loading="lazy" allowFullScreen 
   src={`https://www.google.com/maps/embed/v1/search?q=${data.launch.launch_site.site_name_long}&key=AIzaSyAfXIPQc-yZFDK4ndNUiJjBi4onJm1TVr8&maptype=satellite`}></iframe>
                   </div>
                 </div>
@@ -194,7 +195,10 @@ function Launchdetails () {
 
             <section className="launchdetail-stats">
                 {/* <img src={falcon9img} alt=""/> */}
+                <div></div>
                 <div className="launchdetail-rocketstats">
+                  <h4>Rocket Stats</h4>
+                  <br />
                   <h1>{data.launch.rocket.rocket_name}</h1>
                   <div className="rocket-box-container">
                   <div className="rocket-box">

@@ -6,13 +6,24 @@
     
 
 
-  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
 
   $backgroundColor1 :#131516;
   $textColor1: #d8d4cf;
+  $Color1: #617378;
+  $Color2: #58778A;
+  $Color3: #3544AD;
+  $Color4: #13183d;
+  $Font1: 'Oswald', sans-serif;
+  $Font2: 'Ubuntu', sans-serif;
 
-
-  .app{
+  .App{
     background-color: $backgroundColor1;
   }
   section{
@@ -33,7 +44,148 @@
   }
 }
 
-  // Launchlist
+//! Home ~~~~~~~~~~~~~~~~~~
+
+
+
+//* experiment
+
+#home {
+  background-color: $backgroundColor1;
+  color: $textColor1;
+  overflow-x: hidden;
+  .hint {
+    position: absolute;
+    // z-index: 3;
+    color: white;
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+    font-family: $Font1;
+    font-weight: 100;
+    font-size: 3rem;
+  }
+}
+.front-page {
+  width: 100%;
+  height: 100vh;
+  background-color: $backgroundColor1;
+  clip-path: circle(2%);
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0;
+
+  }
+  .intro-text {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    text-align: center;
+    width: 70vw;
+
+    .intro-button{
+      // border: 1px solid white;
+      // margin: 20px;
+      border: 1px solid white;
+      padding: 20px;
+      position:relative;
+      background-color: rgba($Color3, 0.7 );
+
+    }
+
+
+  }
+  .blend {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0;
+    position: absolute;
+
+  }
+
+
+}
+// .second-page{
+//   background-color: $backgroundColor1;
+//   height: 100vh;
+//   color: $textColor1;
+
+//   .maintext{
+//     height: 100%;
+//     padding: 20vh 20vw;
+//     // margin: 10% 20%;
+//   }
+// }
+
+
+//! Nav~~~~~~~~~~~~~~~~~~~~~
+
+nav{
+  width: 100%;
+  height: 70px;
+  background-color: rgb(15, 15, 15);
+  // border-bottom: 1px dashed $textColor1;
+  color: $textColor1;
+  display: flex;
+  padding-left: 3vw;
+  align-items: center;
+  justify-content: space-around;
+  a {
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+  
+  ul{
+    display: flex;
+    font-family: $Font1;
+    font-weight: 200;
+    margin-left: 2vw;
+    li{
+      padding: 1vh 0;
+      width: 10vw;
+      margin: 0 1vw;
+      list-style-type: none;
+      text-align: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+  .nav-right{
+    display: flex;
+    width: 30vw;
+    justify-content: center;
+  #searchbar {
+    background-color: $backgroundColor1;
+    padding: 1.5vh;
+    width: 18vw;
+    margin: 0 0.5vw;
+    border: 1px solid $Color2;
+    border-radius: 3px;
+    color: $textColor1;
+    font-family: $Font2;
+  }
+
+  #searchbutton {
+    height: 6vh;
+    width: 6vh;
+    border: 0px;
+    filter: invert(1);
+    opacity: 0.8;
+  }
+}
+}
+
+
+//! Launchlist~~~~~~~~~~~~~~~~~~~
 
   .launchlist{
     background-color: $backgroundColor1;
@@ -42,11 +194,21 @@
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0;
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    min-height: 90vh;
+    .launchlist-controls{
+      width: 100%;
+      text-align: center;
     }
+    .launchlist-controls button{
+      border: 1px solid white;
+      padding: 10px;
+      background-color: rgba($Color3, 0.7 );
+      color: $textColor1;
+      margin: 1vh 1vw;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
   }
   .launchlist-item-single{
     margin: 1vw;
@@ -56,7 +218,7 @@
     padding: 1vw;
     display: flex;
     flex-wrap: wrap;
-    border: 1px black dotted;
+    border: 1px dotted black;
     
     .launchlist-image{
         overflow: hidden;
@@ -81,15 +243,18 @@
 
 
   .launchdetail-page{
-    padding: 5vh 2vw;
+    padding: 5vh 0vw;
     background-color: $backgroundColor1;
     color: rgb(230, 230, 230);
+    font-family: $Font2;
+
     a{
       color: inherit;
       text-decoration: none;
     }
     h1 {
       text-align: center;
+      font-size: 2rem;
     }
     .prevnextbuttons{
     position: absolute;
@@ -97,6 +262,7 @@
     justify-content: space-between;
     width: 100%;
     left: 0%;
+    top: 30vh;
       button{
         padding: 20px;
         display: flex;
@@ -128,13 +294,14 @@
       .launchdetail-details{
         margin: 0 2vw;
         padding: 2vh 0vw;
+
       }
     }
 
     .carousel{
-      width: 100vw;
+      width: 100%;
       height: 90vh;
-      margin: 5vh -3vw;
+      margin: 5vh 0vw;
 
       img{
         object-fit: contain;
@@ -143,14 +310,14 @@
     }
 
     .launchdetail-stats{
-    
-      margin: 5vh 5vw;
-      // display: flex;
-      width: 75vw;
-      margin: 10vh auto 0;
+      border-top: 1px dotted grey;
+      border-bottom: 1px dotted grey;
+      display: flex;
+      width: 100%;
+      margin: 10vh auto;
       font-size: 1.2rem;
-      background-color: rgba(0, 0, 0, 0.33);
-      background-image: url(../src/images/falcon9.jpg);
+      background-color: black;
+      // background-image: url(../src/images/falcon9.jpg);
       background-position: center;
       background-size: cover;
       background-blend-mode: darken;
@@ -165,32 +332,42 @@
         
       // }
       .launchdetail-rocketstats{
-        width: 75vw;
-
+        width: 100%;
+        padding: 2vh;
         // position: absolute;
         z-index: 2;
         color: white;
-
+        text-align: center;
+        font-family: $Font2;
+        line-height: 140%;
+        h1{
+          font-size: 3rem;
+          font-family: $Font2;
+        }
+        h3 {
+          color: $Color2;
+        }
       }
       .rocket-box-container{
         display: flex;
         justify-content: space-around;
         align-items: center;
         .rocket-box{
+          border: 1px dashed $Color3;
           width: 20vw;
           height: 50vh;
           padding: 3vw;
-          margin: 10vh 2vw;
+          margin: 3vh 2vw;
           background-color: rgba(0, 0, 0, 0.7);
           border-radius: 50px;
-
+          overflow: auto;
          
         }
       }
     }
     .youtube{
-      width: 60vw;
-      height: 60vh;
+      width: 90vw;
+      height: 80vh;
       margin: 0 auto;
     }
     .gmaps{
@@ -202,4 +379,11 @@
       background-color: $backgroundColor1;
       text-align: center;
     }
+  }
+
+  //! Infopage ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  #infopage {
+    color: $textColor1;
+    height: 100vh;
   }
