@@ -78,9 +78,7 @@ function Launchlist () {
       </div>
       );
     if (error) return <p>{error}</p>;
-    // if (data){
-    //     console.log(data)
-    // }
+
 
     const handlePage = (str : "up"|"down") => {
       if (offset > 99 && str === "up"){

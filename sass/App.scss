@@ -20,6 +20,7 @@ a {
   $Color2: #58778A;
   $Color3: #3544AD;
   $Color4: #13183d;
+  $ColorGetloh: #E06112;
   $Font1: 'Oswald', sans-serif;
   $Font2: 'Ubuntu', sans-serif;
 
@@ -96,7 +97,7 @@ a {
       padding: 20px;
       position:relative;
       background-color: rgba($Color3, 0.7 );
-
+      border-radius: 4px;
     }
 
 
@@ -148,15 +149,20 @@ nav{
     display: flex;
     font-family: $Font1;
     font-weight: 200;
-    margin-left: 2vw;
+    margin: 0 2vw;
     li{
       padding: 1vh 0;
-      width: 10vw;
+      width: 8vw;
       margin: 0 1vw;
       list-style-type: none;
       text-align: center;
       font-size: 1.5rem;
       cursor: pointer;
+      
+    }
+    li:hover{
+      color: $Color2;
+      text-decoration:underline;
     }
   }
   .nav-right{
@@ -180,6 +186,12 @@ nav{
     border: 0px;
     filter: invert(1);
     opacity: 0.8;
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+  }
+  #searchbutton:hover{
+    transform: rotate(-45deg);
+    transition: 0.5s all ease-in-out;
   }
 }
 }
@@ -381,11 +393,12 @@ nav{
     }
   }
 
-  //! Infopage ~~~~~~~~~~~~~~~~~~~~~~~~~
+  //! aboutpage ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  #infopage {
+  #aboutpage {
     color: $textColor1;
     height: 100vh;
+    padding: 10vh 20vw;
     a{
       text-decoration: underline;
       color: $Color2;

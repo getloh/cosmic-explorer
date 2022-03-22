@@ -20,8 +20,8 @@ function Navbar () {
          case "Launches":
             Navigate('/launches')
             break;
-         case "Info":
-            Navigate('/info')
+         case "About":
+            Navigate('/about')
             break;
          default:
              Navigate('/');
@@ -48,7 +48,7 @@ function Navbar () {
             <a href="/"><img src={cosmiclogo} alt="" /></a>
             {/* <h2>Cosmic <br /> Explorer</h2> */}
             <ul>
-                {["Home", "Launches", "Info"].map((string) => {
+                {["Home", "Launches", "About"].map((string) => {
                     return (
                     <li key={string} onClick={() => handleClick(string)}> {string}</li>
                     )
@@ -57,7 +57,7 @@ function Navbar () {
             </ul>
 
             <div className="nav-right">
-                <input name="searchbar" onKeyUp={handleKeypress} id="searchbar" placeholder="ID or Search mission name" type="text" onChange={(e) => setSearch(e.target.value)}/>
+                <input name="searchbar" autoComplete="off" onKeyUp={handleKeypress} id="searchbar" placeholder="ID or Search mission name" type="text" onChange={(e) => setSearch(e.target.value)}/>
                 <button name="searchbutton" onClick={handleSearchButton} id="searchbutton"><img src={rocket} alt="Search icon"/></button>
             </div>
         </nav>
