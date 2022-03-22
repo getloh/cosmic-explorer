@@ -56,7 +56,7 @@ function Launchlist () {
 
   console.log(searchParam)
 
-  if (search) {
+  if (search) {   // If a search term is in the URL, use the find query
       graphQuery = findLaunches
   }
 

@@ -57,8 +57,8 @@ function Navbar () {
             </ul>
 
             <div className="nav-right">
-                <input onKeyUp={handleKeypress} id="searchbar" placeholder="ID or Search mission name" type="text" onChange={(e) => setSearch(e.target.value)}/>
-                <button onClick={handleSearchButton} id="searchbutton"><img src={rocket} alt="Search icon"/></button>
+                <input name="searchbar" onKeyUp={handleKeypress} id="searchbar" placeholder="ID or Search mission name" type="text" onChange={(e) => setSearch(e.target.value)}/>
+                <button name="searchbutton" onClick={handleSearchButton} id="searchbutton"><img src={rocket} alt="Search icon"/></button>
             </div>
         </nav>
             <main>

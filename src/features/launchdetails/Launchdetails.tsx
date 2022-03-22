@@ -52,6 +52,24 @@ query launchdetails($id: ID!){
   }
 }`
 
+export const youTubeRegex = (ytlink : string) => {  //* Extracts the youtube ID from a URL
+  let youtubeId = "";
+  const dotBe = "youtu.be/";  // for regex
+  const slashWatch = "youtube.com/watch?";
+  const findBe = ytlink.search(dotBe);  // Will probably return 8 if found, else -1
+  const findWatch = ytlink.search(slashWatch);
+  if (findBe !== -1){
+    youtubeId = ytlink.slice(findBe + 9)
+  }
+  else {
+    youtubeId = ytlink.slice(findWatch + 20);
+  }
+  let edgeCase = youtubeId.search("&")
+  if (edgeCase !== -1){
+    youtubeId = youtubeId.slice(0, edgeCase);
+  }
+  return youtubeId
+}
 
 const flickityOptions = {
   initialIndex: 1,
@@ -105,26 +123,7 @@ function Launchdetails () {
     }
 
     const getYoutube = (ytlink : string) => {
-      // ht tp s: // ww || w. yo ut ub e. || co m/ wa tc h? || v= <22>vsDknmK30C0
-      // ht tp s: // yo || ut u. be / <17> VshdafZvwrg
-
-      let youtubeId = "";
-      const dotBe = "youtu.be/";  // for regex
-      const slashWatch = "youtube.com/watch?";
-      const findBe = ytlink.search(dotBe);  // Will probably return 8 if found, else -1
-      const findWatch = ytlink.search(slashWatch);
-
-      if (findBe !== -1){
-        youtubeId = ytlink.slice(findBe + 9)
-      }
-      else {
-        youtubeId = ytlink.slice(findWatch + 20);
-      }
-
-      let edgeCase = youtubeId.search("&")
-      if (edgeCase !== -1){
-        youtubeId = youtubeId.slice(0, edgeCase);
-      }
+      let youtubeId = youTubeRegex(ytlink);
       
       return (
         <div className="youtube">

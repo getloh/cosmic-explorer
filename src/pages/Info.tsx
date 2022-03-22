@@ -11,7 +11,7 @@ const Info = () => {
             <h2>Thanks for visiting</h2>
             <p>This site is primarily intended as a portfolio site</p>
             <h3>Main tech Used:</h3>
-            <p>React, React-Router, Typescript, <a href="https://api.spacex.land/graphql/"> SpaceX GraphQL API</a></p>
+            <p>React, React-Router, Typescript, SASS, <a href="https://api.spacex.land/graphql/"> SpaceX GraphQL API</a></p>
             <h4>Helper libraries Used:</h4>
             <p>Moment, Apollo, GSAP, Flickity </p>
             <h2>See my other projects at <a style={{filter: "invert(1)"}} href="https://getloh.co.uk">GetLoh.co.uk</a> </h2>
