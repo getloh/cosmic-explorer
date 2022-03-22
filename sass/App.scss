@@ -12,6 +12,7 @@ a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
+
 }
 
   $backgroundColor1 :#131516;
@@ -218,7 +219,7 @@ nav{
     padding: 1vw;
     display: flex;
     flex-wrap: wrap;
-    border: 1px dotted black;
+    border: 1px dotted rgb(40, 40, 40);
     
     .launchlist-image{
         overflow: hidden;
@@ -386,4 +387,8 @@ nav{
   #infopage {
     color: $textColor1;
     height: 100vh;
+    a{
+      text-decoration: underline;
+      color: $Color2;
+    }
   }

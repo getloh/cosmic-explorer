@@ -37,10 +37,9 @@ function Navbar () {
         }
     }
     const handleKeypress = (event : React.KeyboardEvent<HTMLInputElement>) => {                   // Allows for using 'enter' on keyboard instead of mouseclick on button
-        if (event.code === "Enter") {
+        if (event.code === "Enter" || event.code === "NumpadEnter") {
           handleSearchButton();
         }
-        console.log(event.code)
     }
 
     return (
@@ -58,7 +57,7 @@ function Navbar () {
             </ul>
 
             <div className="nav-right">
-                <input onKeyUp={handleKeypress} id="searchbar" placeholder="Enter an ID or Search for a mission" type="text" onChange={(e) => setSearch(e.target.value)}/>
+                <input onKeyUp={handleKeypress} id="searchbar" placeholder="ID or Search mission name" type="text" onChange={(e) => setSearch(e.target.value)}/>
                 <button onClick={handleSearchButton} id="searchbutton"><img src={rocket} alt="Search icon"/></button>
             </div>
         </nav>

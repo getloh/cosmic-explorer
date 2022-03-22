@@ -93,6 +93,17 @@ function Launchlist () {
       console.log(event);
     }
 
+    if (data.launchesPast.length === 0){
+      return (
+
+        <div id="loadscreen">
+          <h1>No items found...</h1>
+          <h3>Either something went wrong, or your search found no results</h3>
+        </div>
+      )
+
+    }
+
     return (
       <section className="launchlist">
         {data.launchesPast.map((x:pastLaunchSingleTypes) => <div className="launchlist-item-single" key={x.id} ><a href={`/launch/${x.id}`} ><LaunchListItem data={x} key={x.id}/></a></div>)}
