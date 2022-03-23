@@ -1,47 +1,62 @@
-# Getting Started with Create React App
+# Cosmic Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Usage](#usage)
 
-## Available Scripts
+## General Information
+A frontend app for viewing the SpaceX graphQL API
 
-In the project directory, you can run:
+## Technologies Used
+- HTML (as JSX)
+- Javascript (as Typescript ES6)
+- React and React-Router
+- SASS (as SCSS)
+- The [spaceX graphQL Api](https://api.spacex.land/graphql/)
+- GSAP
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Fancy intro homepage
+Powered by GSAP and a video i've borrowed from the spaceX youtube channel.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Fetches and displays data for all previous spaceX launches
+/launches page provides basic insights
 
-### `npm test`
+### Detailed item view provides further data
+/launch/:id provides additional data grabbed from the API including rocket stats, a carousel of images and a video link.
+The API is surprisingly inconsistent and so many conditional statements are present in case pictures/data are not provided in the data fetch.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Screenshots
+Home Page
+![https://meng.s-ul.eu/6uTU8cqG](https://meng.s-ul.eu/6uTU8cqG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Launches Page
+![https://meng.s-ul.eu/bFFIqyUt](https://meng.s-ul.eu/bFFIqyUt)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Detail page
+![https://meng.s-ul.eu/wypJ6gLi](https://meng.s-ul.eu/wypJ6gLi)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Video
+[https://gfycat.com/fluffyelatedadmiralbutterfly](https://gfycat.com/fluffyelatedadmiralbutterfly)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Usage
+This project will not work properly if cloned as it is missing the postgreSQL database.
+An online demo is available on Heroku - [https://kakariko-games.herokuapp.com/]
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Further possible improvements (Backend)
+- Further testing suites
+- Further security improvements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Further possible improvements (Shop Frontend)
+- Further testing suites
+- Further security improvements
+- Adding rating system
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# cosmic-explorer
+## Further possible improvements (Warehouse Admin)
+- To be created...
