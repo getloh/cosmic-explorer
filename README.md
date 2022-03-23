@@ -43,20 +43,10 @@ Detail page
 
 
 ## Video
-[https://gfycat.com/fluffyelatedadmiralbutterfly](https://gfycat.com/fluffyelatedadmiralbutterfly)
+[https://gfycat.com/BoringBlondCatfish](https://gfycat.com/BoringBlondCatfish)
 
 ## Usage
-This project will not work properly if cloned as it is missing the postgreSQL database.
-An online demo is available on Heroku - [https://kakariko-games.herokuapp.com/]
+Run via npm start
 
-## Further possible improvements (Backend)
-- Further testing suites
-- Further security improvements
-
-## Further possible improvements (Shop Frontend)
-- Further testing suites
-- Further security improvements
-- Adding rating system
-
-## Further possible improvements (Warehouse Admin)
-- To be created...
+## Further possible improvements
+- Could add more ways to query data

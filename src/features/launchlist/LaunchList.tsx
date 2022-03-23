@@ -81,6 +81,12 @@ function Launchlist () {
 
 
     const handlePage = (str : "up"|"down") => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+
       if (offset > 99 && str === "up"){
         setOffset(0);
       }

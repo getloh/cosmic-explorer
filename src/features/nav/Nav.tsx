@@ -53,7 +53,7 @@ function Navbar () {
     }
     if (mobileView){
         return (
-            <div>
+            <div id="nav">
             <nav>
                 <a href="/"><img src={cosmiclogomobile} alt="" /></a>
                 {/* <h2>Cosmic <br /> Explorer</h2> */}
@@ -87,7 +87,7 @@ function Navbar () {
     }
 
     return (
-        <div>
+        <div id="nav">
         <nav>
             <a href="/"><img src={cosmiclogo} alt="" /></a>
             {/* <h2>Cosmic <br /> Explorer</h2> */}
