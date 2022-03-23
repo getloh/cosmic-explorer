@@ -1,6 +1,6 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "cosmic-explorer",
+  "version": "0.99.0",
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.5.10",
@@ -11,7 +11,7 @@
     "@types/node": "^16.11.26",
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
-    "flickity": "^3.0.0",
+    "flickity": "^2.3.0",
     "graphql": "^16.3.0",
     "gsap": "^3.9.1",
     "moment": "^2.29.1",

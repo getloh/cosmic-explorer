@@ -1,11 +1,10 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql} from "@apollo/client";
-import { pastLaunchesTypes, pastLaunchSingleTypes, launchType } from "../interfaces";
-import { useState } from "react";
+import { useQuery, gql} from "@apollo/client";
+
 import {useParams, useNavigate} from 'react-router-dom';
 import moment from 'moment';
 import Flickity from 'react-flickity-component';
 import '../lib/flickity.css';
-import falcon9img from '../../images/falcon9.jpg'
+// import "flickity/css/flickity.css";
 import loadinggif from '../../images/loadingripple.svg'
 import noimg from '../../images/nolaunchimage.jpg'
 

@@ -474,6 +474,7 @@ nav{
     padding: 10vh 20vw;
     @media screen and (max-width: 600px) {
       height: 100%;
+      min-height: 100vh;
       padding: 5vh 10vw;
     }
     a{
