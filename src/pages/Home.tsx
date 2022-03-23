@@ -57,7 +57,7 @@ function Home () {
 
                 <div className="blend"></div>
                 <video autoPlay loop muted>
-                 <source src={spacexvideo} type="video/mp4"></source>
+                 <source src="https://publicstore-sl.s3.eu-west-2.amazonaws.com/spacex.mp4" type="video/mp4"></source>
                 </video>
             
 
