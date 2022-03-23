@@ -134,6 +134,23 @@ https://flickity.metafizzy.co
 }
 
 .flickity-rtl .flickity-page-dots { direction: rtl; }
+.flickity-rtl .dots { direction: rtl; }
+
+
+.dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 0 8px;
+  background: hsl(0 0% 20% / 25%);
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  text-indent: -9999px;
+  overflow: hidden;
+}
 
 .flickity-page-dot {
   display: block;
@@ -153,12 +170,22 @@ https://flickity.metafizzy.co
 .flickity-rtl .flickity-page-dot {
   text-indent: 9999px;
 }
+.flickity-rtl .dot {
+  text-indent: 9999px;
+}
 
 .flickity-page-dot:focus {
   outline: none;
   box-shadow: 0 0 0 5px #19F;
 }
+.dot:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px #19F;
+}
 
 .flickity-page-dot.is-selected {
+  background: hsl(0 0% 20% / 100%);
+}
+.dot.is-selected {
   background: hsl(0 0% 20% / 100%);
 }
