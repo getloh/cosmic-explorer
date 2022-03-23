@@ -4,7 +4,7 @@ import { useState } from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import moment from 'moment';
 import Flickity from 'react-flickity-component';
-import "flickity/css/flickity.css";
+import '../lib/flickity.css';
 import falcon9img from '../../images/falcon9.jpg'
 import loadinggif from '../../images/loadingripple.svg'
 import noimg from '../../images/nolaunchimage.jpg'
