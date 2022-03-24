@@ -1,8 +1,8 @@
-import { ApolloClient, InMemoryCache, ApolloProvider, useQuery, gql} from "@apollo/client";
-import { pastLaunchesTypes, pastLaunchSingleTypes } from "../interfaces";
+import { useQuery, gql} from "@apollo/client";
+import { pastLaunchSingleTypes } from "../interfaces";
 import { useState } from "react";
-import { useSearchParams, useLocation } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
+import { randomLoadGen } from "../utility/utility";
 
 import LaunchListItem from "./LaunchListItem";
 import loadinggif from '../../images/loadingripple.svg'
@@ -49,20 +49,16 @@ query findLaunchesList ($search: String!){
 
 function Launchlist () {
   const [offset, setOffset] = useState<number>(0);
-  const { search } = useLocation();
+  const { search } = useLocation();   // finds search term if any
   let searchParam = search.slice(1);
 
   let graphQuery = pastLaunches;
 
-  console.log(searchParam)
-
-  if (search) {   // If a search term is in the URL, use the find query
+  if (search) {   //? If a search term is in the URL, use the find query
       graphQuery = findLaunches
   }
 
-
-
-  const { loading, error, data } = useQuery(graphQuery, {
+  const { loading, error, data } = useQuery(graphQuery, { //? Apollo gql query
         variables:{
           limit: 20,
           offset: offset,
@@ -70,44 +66,50 @@ function Launchlist () {
         }
     });
 
-
-    if (loading) return (
-      <div id="loadscreen">
-        <img src={loadinggif} alt="loading" title="loading" />
-        <h3>Loading data...</h3>
-      </div>
-      );
-    if (error) return <p>{error}</p>;
-
-
-    const handlePage = (str : "up"|"down") => {
+    const handlePage = (str : "up"|"down") => {   //? Changes page via the offset (state)
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth'
       });
 
-      if (offset > 99 && str === "up"){
+      if (offset > 99 && str === "up"){   // Edge case to prevent offsetting too high
         setOffset(0);
       }
-      else {setOffset(offset + (str === "up" ? 20 : -20))}
+      else {  
+        setOffset(offset + (str === "up" ? 20 : -20))
+      }
     }
 
-    const handleClick = (event:any) => {
-      console.log(event);
-    }
+//* Loading screen
+  if (loading) return (   
+    <div id="loadscreen">
+      <img src={loadinggif} alt="loading" title="loading" />
+      <h3>{randomLoadGen()}</h3>
+    </div>
+    );
+//* Error screen
+  if (error) return (
+    <div id="loadscreen">
+      <h1>A problem occured while fetching data from the spaceX server</h1>
+      <h3>This may resolve on a refresh, or the external server may be down.</h3>
+      <h4>Either way, I blame Elon</h4>
+      <br /> <br />
+      <p>{error}</p>
+  </div>
+  );
 
+//* Page if no items found in the data array (bad search or strange server response)
     if (data.launchesPast.length === 0){
       return (
-
         <div id="loadscreen">
           <h1>No items found...</h1>
           <h3>Either something went wrong, or your search found no results</h3>
         </div>
       )
-
     }
 
+//* Main Return - does a .map on the data array
     return (
       <section className="launchlist">
         {data.launchesPast.map((x:pastLaunchSingleTypes) => <div className="launchlist-item-single" key={x.id} ><a href={`/launch/${x.id}`} ><LaunchListItem data={x} key={x.id}/></a></div>)}

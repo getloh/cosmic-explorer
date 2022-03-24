@@ -11,18 +11,15 @@ function Navbar () {
     const [search, setSearch] = useState("");
     const [mobileView, setMobileView] = useState(window.innerWidth < 600);
 
-    const updateMedia = () => {
+    const updateMedia = () => { //? Checks for mobile view
       setMobileView(window.innerWidth < 600);
     };
-  
-    useEffect(() => {
+    useEffect(() => {   //? Checks for mobile view
       window.addEventListener("resize", updateMedia);
       return () => window.removeEventListener("resize", updateMedia);
     });
 
     const handleClick = (option : string) => {
-        console.log(option);
-
      switch(option){
          case "Home":
             Navigate('/');
@@ -46,11 +43,12 @@ function Navbar () {
             Navigate(`/launches?${search}`)
         }
     }
-    const handleKeypress = (event : React.KeyboardEvent<HTMLInputElement>) => {                   // Allows for using 'enter' on keyboard instead of mouseclick on button
+    const handleKeypress = (event : React.KeyboardEvent<HTMLInputElement>) => {      // Allows for using 'enter' on keyboard instead of mouseclick on button
         if (event.code === "Enter" || event.code === "NumpadEnter") {
           handleSearchButton();
         }
     }
+//* Mobileview (<600px wide)
     if (mobileView){
         return (
             <div id="nav">
@@ -85,12 +83,11 @@ function Navbar () {
             </div>
         )
     }
-
+//* Default return
     return (
         <div id="nav">
         <nav>
             <a href="/"><img src={cosmiclogo} alt="" /></a>
-            {/* <h2>Cosmic <br /> Explorer</h2> */}
             <ul>
                 {["Home", "Launches", "About"].map((string) => {
                     return (
@@ -105,15 +102,13 @@ function Navbar () {
                 <button name="searchbutton" onClick={handleSearchButton} id="searchbutton"><img src={rocket} alt="Search icon"/></button>
             </div>
         </nav>
-            <main>
 
+            <main>
                 <Outlet />
             </main>
 
         </div>
-
     )
-
 }
 
 export default Navbar;

@@ -23,6 +23,9 @@ A frontend app for viewing the SpaceX graphQL API
 ### Fancy intro homepage
 Powered by GSAP and a video i've borrowed from the spaceX youtube channel.
 
+### Responsive layout
+The Nav in particular will display differently based on maxWidth
+
 ### Fetches and displays data for all previous spaceX launches
 /launches page provides basic insights
 
@@ -40,7 +43,6 @@ Launches Page
 
 Detail page
 ![https://meng.s-ul.eu/wypJ6gLi](https://meng.s-ul.eu/wypJ6gLi)
-
 
 ## Video
 [https://gfycat.com/BoringBlondCatfish](https://gfycat.com/BoringBlondCatfish)
